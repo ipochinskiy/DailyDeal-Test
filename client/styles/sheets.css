@@ -1,0 +1,44 @@
+.sheet {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.50);
+  border-radius: 4px;
+  position: absolute;
+  top: 200px;
+  left: 600px;
+  width: 841px;
+  height: 441px;
+
+  padding: 100px;
+}
+
+.sheet-twisted {
+  transform: rotate(-3deg);
+  z-index: 10;
+}
+
+.sheet-straight {
+  z-index: 20;
+}
+
+.sheet-heading {
+  font-family: HelveticaNeue-Thin;
+  font-size: 32px;
+  color: #767676;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sheet-text {
+  font-family: HelveticaNeue-Light;
+  font-size: 20px;
+  color: #C0C0C0;
+  line-height: 26px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.sheet hr {
+  margin-top: 65px;
+  width: 30%;
+  border: 1px solid #EEEEEE;
+}
