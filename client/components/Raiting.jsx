@@ -8,7 +8,7 @@ export default class Raiting extends Component {
     return (
       <div>
         <Sheet type="twisted" />
-        <Sheet type="straight" />
+        <Sheet type="straight" selected="good"/>
       </div>
     );
   }

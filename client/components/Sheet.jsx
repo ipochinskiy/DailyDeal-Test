@@ -3,7 +3,14 @@
 import React, { Component } from 'react';
 import Emoji from './Emoji';
 
+const emojis = [
+  'awful', 'bad', 'neutral', 'good', 'amazing'
+];
+
 export default class Sheet extends Component {
+  rate() {
+    
+  }
   render() {
       if (this.props.type === 'twisted') {
         return (<div className="sheet sheet-twisted"></div>);
@@ -15,11 +22,14 @@ export default class Sheet extends Component {
               <hr />
 
               <div className="emojis-bar">
-                <Emoji type="awful" />
-                <Emoji type="bad" />
-                <Emoji type="neutral" />
-                <Emoji type="good" />
-                <Emoji type="amazing" />
+                { emojis.map(type =>
+                    <Emoji
+                      key={ type }
+                      type={ type }
+                      selected={ this.props.selected === type }
+                      onClick={ this.rate }
+                    />
+                ) }
               </div>
           </div>
         );
