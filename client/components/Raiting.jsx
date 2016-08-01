@@ -6,7 +6,7 @@ import Sheet from './Sheet';
 export default class Raiting extends Component {
   render() {
     return (
-      <div>
+      <div className="flex-container">
         <Sheet type="twisted" />
         <Sheet type="straight" selected="good"/>
       </div>
