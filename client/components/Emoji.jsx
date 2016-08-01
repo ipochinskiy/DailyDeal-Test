@@ -2,9 +2,12 @@
 
 import React, {Component} from 'react';
 
+import { Ratings } from '../../libs/collections/Ratings';
+
 export default class Emoji extends Component {
     rate(type) {
       Meteor.call('rate', type);
+      console.log(Ratings.find({}).count());
     }
     renderCheck() {
       if (this.props.selected) {
