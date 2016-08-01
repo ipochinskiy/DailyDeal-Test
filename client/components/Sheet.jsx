@@ -8,9 +8,6 @@ const emojis = [
 ];
 
 export default class Sheet extends Component {
-  rate() {
-    
-  }
   render() {
       if (this.props.type === 'twisted') {
         return (<div className="sheet sheet-twisted"></div>);
@@ -22,12 +19,11 @@ export default class Sheet extends Component {
               <hr />
 
               <div className="emojis-bar">
-                { emojis.map(type =>
+                { emojis.map((type, index) =>
                     <Emoji
-                      key={ type }
+                      key={ index }
                       type={ type }
                       selected={ this.props.selected === type }
-                      onClick={ this.rate }
                     />
                 ) }
               </div>

@@ -3,6 +3,9 @@
 import React, {Component} from 'react';
 
 export default class Emoji extends Component {
+    rate(type) {
+      Meteor.call('rate', type);
+    }
     renderCheck() {
       if (this.props.selected) {
         return (
@@ -13,12 +16,11 @@ export default class Emoji extends Component {
           </span>
         );
       }
-    },
+    }
     render() {
-      let selected = this.props.selected
         return (
-          <div className="emoji">
-            <div className={this.props.type} ></div>
+          <div className="emoji" onClick={ this.rate.bind(this, this.props.type) }>
+            <div className={ this.props.type } ></div>
             { this.renderCheck() }
           </div>
         );
