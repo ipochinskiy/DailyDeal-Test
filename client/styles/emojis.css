@@ -1,0 +1,109 @@
+.emojis-bar {
+  margin-top: 60px;
+  width: auto;
+  height: auto;
+  display: inline-block;
+}
+
+.emoji {
+  border: 2px solid #4ABED5;
+  -moz-border-radius:75px;
+  -webkit-border-radius: 75px;
+
+  margin: 0 30px;
+
+  height: 100px;
+  width: 100px;
+  float: left;
+  background-color: transparent;
+  z-index: 20
+}
+
+.neutral {
+  clear: both;
+  width: 60%;
+  background: #4ABED5;
+  height: 2px;
+  margin: 65px auto auto auto;
+  z-index: 40
+}
+
+.awful {
+  height: 30px;
+  width: 60px;
+  border-radius: 90px 90px 0 0;
+  -moz-border-radius: 90px 90px 0 0;
+  -webkit-border-radius: 90px 90px 0 0;
+  border: 2px solid #4ABED5;
+  margin: 45px auto auto auto;
+}
+
+.amazing {
+  height: 35px;
+  width: 70px;
+  border-radius: 0 0 90px 90px;
+  -moz-border-radius: 0 0 90px 90px;
+  -webkit-border-radius: 0 0 90px 90px;
+  border: 2px solid #4ABED5;
+  margin: 50px auto auto auto;
+}
+
+.good {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+
+  margin: 40px auto auto auto;
+  width: 70px;
+  height: 40px;
+  border-bottom: 2px solid #4ABED5;
+}
+
+.bad {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+
+  margin: 65px auto auto auto;
+  width: 70px;
+  height: 40px;
+  border-top: 2px solid #4ABED5;
+}
+
+.checkmark {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+
+.checkmark_circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50px;
+    border: 2px solid #4ABED5;
+    left: 0;
+    top: 0;
+}
+
+.checkmark_stem {
+    position: absolute;
+    width: 5px;
+    height: 25px;
+    background-color: #4ABED5;
+    left: 25px;
+    top: 10px;
+}
+
+.checkmark_kick {
+    position: absolute;
+    width: 15px;
+    height: 5px;
+    background-color: #4ABED5;
+    left: 15px;
+    top: 30px;
+}

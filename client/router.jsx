@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { mount } from 'react-mounter';
-import Raiting from './containers/Raiting';
+import Raiting from './components/Raiting';
 
 const MainLayout = ({ content }) => (
     <div id="root">

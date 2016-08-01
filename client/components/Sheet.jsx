@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import Emojis from './Emojis';
+import Emoji from './Emoji';
 
 export default class Sheet extends Component {
   render() {
@@ -14,7 +14,13 @@ export default class Sheet extends Component {
               <div className="sheet-text">We’re always looking for ways to improve our customer experience.</div>
               <hr />
 
-              <Emojis />
+              <div className="emojis-bar">
+                <Emoji type="awful" />
+                <Emoji type="bad" />
+                <Emoji type="neutral" />
+                <Emoji type="good" />
+                <Emoji type="amazing" />
+              </div>
           </div>
         );
       }
