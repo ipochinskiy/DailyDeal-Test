@@ -19,9 +19,6 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/rating', {
   name: 'rating',
-  subscriptions: function(params) {
-    // this.register('rating', );
-  },
   action(params, queryParams) {
     mount(MainLayout, { content: (<Raiting />) });
   }

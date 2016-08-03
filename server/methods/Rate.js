@@ -13,6 +13,5 @@ Meteor.methods({
       type,
       ratedAt: new Date()
     });
-    
   }
 });
