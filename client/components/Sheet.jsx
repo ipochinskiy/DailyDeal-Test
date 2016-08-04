@@ -21,7 +21,8 @@ export default class Sheet extends Component {
                     <Emoji
                       key={ emojiMarkMap[type] }
                       type={ type }
-                      selected={ this.props.selected === type }
+                      mark={ emojiMarkMap[type] }
+                      selected={ this.props.myMark === emojiMarkMap[type] }
                     />
                 ) }
               </div>

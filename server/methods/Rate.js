@@ -4,14 +4,20 @@ import { Mongo } from 'meteor/mongo';
 import { Ratings } from '../../libs/collections/Ratings';
 
 Meteor.methods({
-  rate(type) {
-    if (typeof type !== 'string') {
-      throw new Meteor.Error(`Type mismatch, got: ${typeof type}`);
+  rate(mark) {
+    if (typeof mark !== 'number') {
+      throw new Meteor.Error(`Type mismatch, got: ${typeof mark}`);
     }
 
     Ratings.insert({
-      type,
+      mark,
+      remoteAddress: this.connection.clientAddress,
       ratedAt: new Date()
     });
+  },
+  getMyMark() {
+  	let ip = this.connection.clientAddress;
+  	let res = Ratings.findOne({ remoteAddress: ip }, { sort: { 'ratedAt': -1 } });
+  	return res;
   }
 });
