@@ -22,7 +22,7 @@ export default class Emoji extends Component {
     }
     render() {
         return (
-          <div className="emoji" onClick={ this.rate.bind(this, this.props.type) }>
+          <div className="emoji" onClick={ () => this.rate(this.props.type) }>
             <div className={ this.props.type } ></div>
             { this.renderCheck() }
           </div>

@@ -2,16 +2,14 @@
 
 import React, { Component } from 'react';
 import Emoji from './Emoji';
-
-const emojis = [
-  'awful', 'bad', 'neutral', 'good', 'amazing'
-];
+import { emojiMarkMap } from '../../libs/constants';
 
 export default class Sheet extends Component {
   render() {
       if (this.props.type === 'twisted') {
         return (<div className="sheet sheet-twisted"></div>);
       } else {
+        let emojis = Object.keys(emojiMarkMap);
         return (
           <div className="sheet sheet-straight">
               <div className="sheet-heading">How did we do? Please rate your experience.</div>
@@ -19,9 +17,9 @@ export default class Sheet extends Component {
               <hr />
 
               <div className="emojis-bar">
-                { emojis.map((type, index) =>
+                { emojis.map(type =>
                     <Emoji
-                      key={ index }
+                      key={ emojiMarkMap[type] }
                       type={ type }
                       selected={ this.props.selected === type }
                     />
