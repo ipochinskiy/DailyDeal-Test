@@ -41,13 +41,19 @@
 }
 
 .neutral {
-  clear: both;
-  width: 60%;
-  background: #4ABED5;
-  height: 2px;
-  margin: 65px auto auto auto;
-  z-index: 40;
-  display: none;
+  border-radius: 0 0 90px 90px;
+  -moz-border-radius: 0 0 90px 90px;
+  -webkit-border-radius: 0 0 90px 90px;
+
+  border-color: #4ABED5 transparent transparent transparent;
+  border-style: solid;
+  border-width: 2px;
+
+  width: 60px;
+
+  position: relative;
+  top: 70px;
+  left: 18px;
 }
 
 .awful {
@@ -61,8 +67,8 @@
   width: 60px;
 
   position: relative;
-  top: 50%;
-  left: 18%;
+  top: 50px;
+  left: 18px;
 }
 
 .amazing {
@@ -76,8 +82,8 @@
   width: 60px;
 
   position: relative;
-  top: 50%;
-  left: 18%;
+  top: 50px;
+  left: 18px;
 }
 
 .good {
@@ -93,8 +99,8 @@
   width: 80px;
 
   position: relative;
-  top: 40%;
-  left: 8%;
+  top: 40px;
+  left: 8px;
 }
 
 .bad {
@@ -110,6 +116,6 @@
   width: 80px;
 
   position: relative;
-  top: 70%;
-  left: 8%;
+  top: 70px;
+  left: 8px;
 }
