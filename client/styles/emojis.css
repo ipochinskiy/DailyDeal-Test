@@ -1,21 +1,21 @@
 .emojis-bar {
-  margin-top: 60px;
+  margin-top: 5%;
   width: auto;
   height: auto;
-  display: inline-block;
+  min-width: 650px;
 }
 
 .emoji {
   border: 2px solid #4ABED5;
-  -moz-border-radius:75px;
-  -webkit-border-radius: 75px;
-  border-radius: 75px;
+  -moz-border-radius:100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
 
-  margin: 0 30px;
+  margin: 0 15px;
 
   height: 100px;
   width: 100px;
-  float: left;
+
   background-color: transparent;
   z-index: 20;
 
@@ -46,47 +46,70 @@
   background: #4ABED5;
   height: 2px;
   margin: 65px auto auto auto;
-  z-index: 40
+  z-index: 40;
+  display: none;
 }
 
 .awful {
-  height: 30px;
-  width: 60px;
   border-radius: 90px 90px 0 0;
   -moz-border-radius: 90px 90px 0 0;
   -webkit-border-radius: 90px 90px 0 0;
+
   border: 2px solid #4ABED5;
-  margin: 45px auto auto auto;
+
+  height: 30px;
+  width: 60px;
+
+  position: relative;
+  top: 50%;
+  left: 18%;
 }
 
 .amazing {
-  height: 35px;
-  width: 70px;
   border-radius: 0 0 90px 90px;
   -moz-border-radius: 0 0 90px 90px;
   -webkit-border-radius: 0 0 90px 90px;
+
   border: 2px solid #4ABED5;
-  margin: 50px auto auto auto;
+
+  height: 30px;
+  width: 60px;
+
+  position: relative;
+  top: 50%;
+  left: 18%;
 }
 
 .good {
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  border-radius: 100%;
+  border-radius: 0 0 90px 90px;
+  -moz-border-radius: 0 0 90px 90px;
+  -webkit-border-radius: 0 0 90px 90px;
 
-  margin: 40px auto auto auto;
-  width: 70px;
+  border-color: transparent transparent #4ABED5 transparent;
+  border-style: solid;
+  border-width: 2px;
+
   height: 40px;
-  border-bottom: 2px solid #4ABED5;
+  width: 80px;
+
+  position: relative;
+  top: 40%;
+  left: 8%;
 }
 
 .bad {
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  border-radius: 100%;
+  border-radius: 90px 90px 0 0;
+  -moz-border-radius: 90px 90px 0 0;
+  -webkit-border-radius: 90px 90px 0 0;
 
-  margin: 65px auto auto auto;
-  width: 70px;
+  border-color: #4ABED5 transparent transparent transparent;
+  border-style: solid;
+  border-width: 2px;
+
   height: 40px;
-  border-top: 2px solid #4ABED5;
+  width: 80px;
+
+  position: relative;
+  top: 70%;
+  left: 8%;
 }

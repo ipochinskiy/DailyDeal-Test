@@ -16,7 +16,7 @@ export default class Sheet extends Component {
               <div className="sheet-text">We’re always looking for ways to improve our customer experience.</div>
               <hr />
 
-              <div className="emojis-bar">
+              <div className="flex-container emojis-bar">
                 { emojis.map(type =>
                     <Emoji
                       key={ emojiMarkMap[type] }

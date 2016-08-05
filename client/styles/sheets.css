@@ -2,20 +2,29 @@
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: center;
+  -moz-justify-content: center;
   justify-content: center;
 }
 
 .sheet {
   background: #FFFFFF;
-  box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.50);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   position: absolute;
-  top: 200px;
-  width: 841px;
-  height: 441px;
-  margin: auto;
 
-  padding: 100px;
+  top: 25%;
+  left: 20%;
+  bottom: 25%;
+
+  height: 50%;
+  min-height: 280px;
+  max-height: 60%;
+
+  width: 50%;
+  min-width: 650px;
+
+  margin: auto;
+  padding: 25px;
 }
 
 .sheet-twisted {
@@ -45,7 +54,7 @@
 }
 
 .sheet hr {
-  margin-top: 65px;
+  margin-top: 10%;
   width: 30%;
   border: 1px solid #EEEEEE;
 }
