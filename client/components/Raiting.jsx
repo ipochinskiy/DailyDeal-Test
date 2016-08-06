@@ -7,23 +7,38 @@ import EmojisBar from './EmojisBar';
 import Sheet from './Sheet';
 import SheetHeading from './SheetHeading';
 
-const makeOnRate = mark => () => Meteor.call('rate', { mark }, (err, res) => {
-  if (!err) {
-    this.setState({ myMark: mark });
-    console.log(this.state);
+import { Ratings } from '../../libs/collections/Ratings';
+
+const getAverageRating = () => {
+  let items = Ratings.find({}).map(item => item.mark);
+
+  let sum = items.reduce((memo, current) => memo + items.mark, 0);
+  return sum / items.length;
+}
+
+const makeOnRate = container => mark => () => Meteor.call('rate', { mark }, function(err, res) {
+  if (res) {
+    container.setState({ myMark: mark, rating: getAverageRating() });
   }
-});
+}.bind(container));
 
 export default class Raiting extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { rating: 0 };
 
     Meteor.call('getMyMark', (err, mark) => {
       if (!err) {
-        this.state = { myMark: mark }
+        this.state = { myMark: mark, rating: 0 }
       }
     });
+  }
+
+  componenWillMount() {
+    Meteor.subscribe('rating');
+  }
+  componenWillUnmount() {
+    Meteor.unsubscribe('rating');
   }
   
   render() {
@@ -34,7 +49,8 @@ export default class Raiting extends Component {
           <SheetHeading />
           <EmojisBar
             myMark={ this.state.myMark }
-            makeOnRate={ makeOnRate.bind(this) }
+            rating={ this.state.rating }
+            makeOnRate={ makeOnRate(this) }
           />
         </Sheet>
       </div>
