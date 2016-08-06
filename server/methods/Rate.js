@@ -9,7 +9,7 @@ Meteor.methods({
       throw new Meteor.Error(`Type mismatch, got: ${typeof mark}`);
     }
 
-    Ratings.insert({
+    return Ratings.insert({
       mark,
       remoteAddress: this.connection.clientAddress,
       ratedAt: new Date()
