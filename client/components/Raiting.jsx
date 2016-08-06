@@ -7,18 +7,26 @@ import EmojisBar from './EmojisBar';
 import Sheet from './Sheet';
 import SheetHeading from './SheetHeading';
 
-export default class Raiting extends Component {
-  componentWillMount() {
-    let mark = Meteor.call('getMyMark');
-    console.log(Date.now(), 'mark:', mark);
+const makeOnRate = mark => () => Meteor.call('rate', { mark }, (err, res) => {
+  if (!err) {
     this.setState({ myMark: mark });
+    console.log(this.state);
   }
-  makeOnRate(mark) {
-    return () => {
-      Meteor.call('rate', mark);
-      this.setState({ myMark: mark });
-    }
+});
+
+export default class Raiting extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+
+    Meteor.call('getMyMark', (err, mark) => {
+      if (!err) {
+        console.log(Date.now(), 'mark:', mark);
+        this.state = { myMark: mark }
+      }
+    });
   }
+  
   render() {
     return (
       <div className="flex-container">
@@ -27,7 +35,7 @@ export default class Raiting extends Component {
           <SheetHeading />
           <EmojisBar
             myMark={ this.state.myMark }
-            makeOnRate={ this.makeOnRate.bind(this) }
+            makeOnRate={ makeOnRate.bind(this) }
           />
         </Sheet>
       </div>
