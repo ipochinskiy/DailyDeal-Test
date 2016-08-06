@@ -17,9 +17,6 @@ const getEmojiClassNames = colored => {
 }
 
 export default class Emoji extends Component {
-    rate(mark) {
-      Meteor.call('rate', mark);
-    }
     renderCheck() {
       if (this.props.selected) {
         return (
@@ -35,7 +32,7 @@ export default class Emoji extends Component {
       let emojisClassNames = getEmojiClassNames(this.props.colored).join(' ');
       let mouthClassNames = getMouthClassNames(this.props.mood, this.props.colored).join(' ');
       return (
-        <div className={ emojisClassNames } onClick={ () => this.rate(this.props.mark) }>
+        <div className={ emojisClassNames } onClick={ this.props.onRate }>
           <div className={ mouthClassNames } ></div>
           { this.renderCheck() }
         </div>

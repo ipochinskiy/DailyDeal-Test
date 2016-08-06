@@ -7,14 +7,25 @@ import Sheet from './Sheet';
 
 export default class Raiting extends Component {
   componentWillMount() {
-    let item = Meteor.call('getMyMark') || {};
-    this.setState({ myMark: item.mark });
+    let mark = Meteor.call('getMyMark');
+    console.log(Date.now(), 'mark:', mark);
+    this.setState({ myMark: mark });
+  }
+  makeOnRate(mark) {
+    return () => {
+      Meteor.call('rate', mark);
+      this.setState({ myMark: mark });
+    }
   }
   render() {
     return (
       <div className="flex-container">
         <Sheet type="twisted" />
-        <Sheet type="straight" selected={ this.state.myMark }/>
+        <Sheet
+          type="straight"
+          myMark={ this.state.myMark }
+          makeOnRate={ this.makeOnRate.bind(this) }
+        />
       </div>
     );
   }
