@@ -21,7 +21,6 @@ export default class Raiting extends Component {
 
     Meteor.call('getMyMark', (err, mark) => {
       if (!err) {
-        console.log(Date.now(), 'mark:', mark);
         this.state = { myMark: mark }
       }
     });

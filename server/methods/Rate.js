@@ -18,7 +18,6 @@ Meteor.methods({
   getMyMark() {
   	let ip = this.connection.clientAddress;
   	let res = Ratings.findOne({ remoteAddress: ip }, { sort: { 'ratedAt': -1 } }) || {};
-  	console.log(Date.now(), 'res:', res);
   	return res.mark;
   }
 });
