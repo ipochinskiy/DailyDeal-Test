@@ -3,7 +3,9 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 
+import EmojisBar from './EmojisBar';
 import Sheet from './Sheet';
+import SheetHeading from './SheetHeading';
 
 export default class Raiting extends Component {
   componentWillMount() {
@@ -21,11 +23,13 @@ export default class Raiting extends Component {
     return (
       <div className="flex-container">
         <Sheet type="twisted" />
-        <Sheet
-          type="straight"
-          myMark={ this.state.myMark }
-          makeOnRate={ this.makeOnRate.bind(this) }
-        />
+        <Sheet type="straight" >
+          <SheetHeading />
+          <EmojisBar
+            myMark={ this.state.myMark }
+            makeOnRate={ this.makeOnRate.bind(this) }
+          />
+        </Sheet>
       </div>
     );
   }
