@@ -13,7 +13,7 @@ export default class EmojisBar extends Component {
       <div className="flex-container emojis-bar">
         { emojis.map(type => {
           let currentMark = emojiMarkMap[type];
-          let colored = this.props.myMark >= currentMark;
+          let colored = Math.floor(this.props.rating) >= emojiMarkMap[type];
           let selected = this.props.myMark === currentMark;
           let onRateHandle = selected
             ? () => {}
