@@ -17,6 +17,7 @@ export default class SheetHeading extends Component {
     return (
       <div>
         <div className="sheet-heading">Thank you.</div>
+        <div className="sheet-text">&nbsp;</div>
         <hr />
       </div>
     );
