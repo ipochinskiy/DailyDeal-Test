@@ -49,7 +49,7 @@ export default class Raiting extends Component {
       <div className="flex-container">
         <Sheet type="twisted" />
         <Sheet type="straight" >
-          <SheetHeading />
+          <SheetHeading type={ this.state.myMark === undefined ? 'initial' : 'thanks' } />
           <EmojisBar
             myMark={ this.state.myMark }
             rating={ this.state.rating }
