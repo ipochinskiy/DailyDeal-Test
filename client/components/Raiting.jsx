@@ -14,13 +14,14 @@ const getAverageRating = () => {
   let items = Ratings.find({}).map(item => item.mark);
   if (items.length === 0) { return 0; }
 
-  let sum = items.reduce((memo, current) => memo + items.mark, 0);
+  let sum = items.reduce((memo, current) => memo + current, 0);
   return sum / items.length;
 }
 
 const makeOnRate = container => mark => () => Meteor.call('rate', { mark }, function(err, res) {
   if (res) {
-    container.setState({ myMark: mark, rating: getAverageRating() });
+    let average = getAverageRating();
+    container.setState({ myMark: mark, rating: average });
   }
 }.bind(container));
 
