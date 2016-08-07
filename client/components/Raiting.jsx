@@ -11,6 +11,7 @@ import { Ratings } from '../../libs/collections/Ratings';
 
 const getAverageRating = () => {
   let items = Ratings.find({}).map(item => item.mark);
+  if (items.length === 0) { return 0; }
 
   let sum = items.reduce((memo, current) => memo + items.mark, 0);
   return sum / items.length;
@@ -32,11 +33,12 @@ export default class Raiting extends Component {
         this.state = { myMark: mark, rating: 0 }
       }
     });
+
+    Tracker.autorun(function(){
+      Meteor.subscribe('rating');
+    });
   }
 
-  componenWillMount() {
-    Meteor.subscribe('rating');
-  }
   componenWillUnmount() {
     Meteor.unsubscribe('rating');
   }
