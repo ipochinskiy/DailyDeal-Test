@@ -4,12 +4,14 @@
   top: 50px;
   left: 70px;
 
-  width: 50px;
-  height: 50px;
-
   background-color: #4ABED5;
   border-radius: 100%;
   border: 2px solid #4ABED5;
+}
+
+.circle_container {
+  width: 50px;
+  height: 50px;
 }
 
 .checkmark_stem {
@@ -42,29 +44,35 @@
   transform: rotate(45deg);
 }
 
-.fadein-animation {
-  -webkit-animation: fadein 2.3s; /* Safari, Chrome and Opera > 12.1 */
-     -moz-animation: fadein 2.3s; /* Firefox < 16 */
-      -ms-animation: fadein 2.3s; /* Internet Explorer */
-       -o-animation: fadein 2.3s; /* Opera < 12.1 */
-          animation: fadein 2.3s;
+.checkmark-animation {
+  -webkit-animation: circle-fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: circle-fadein 1s; /* Firefox < 16 */
+      -ms-animation: circle-fadein 1s; /* Internet Explorer */
+       -o-animation: circle-fadein 1s; /* Opera < 12.1 */
+          animation: circle-fadein 1s;
 }
 
-@keyframes fadein {
+@keyframes circle-fadein {
   0% {
     opacity: 0;
-    transform: scale(2), rotate(45deg);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(0.6);
+  }
+  0%, 60% {
+    transform: scale(1.1);
 
-    top: 0;
-    left: 0;
+    top: -2px;
+    left: -2px;
 
     width: 100px;
     height: 100px;
   }
-  
-  100% {
+  90%, 100% {
+    transform: scale(1);
+
     opacity: 1;
-    transform: scale(1), rotate(45deg);
 
     top: 50px;
     left: 70px;
@@ -75,20 +83,27 @@
 }
 
 /* Firefox < 16 */
-@-moz-keyframes fadein {
+@-moz-keyframes circle-fadein {
   0% {
     opacity: 0;
-    transform: scale(2), rotate(45deg);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(0.6);
+  }
+  0%, 60% {
+    transform: scale(1.1);
 
-    top: 0;
-    left: 0;
+    top: -2px;
+    left: -2px;
 
     width: 100px;
     height: 100px;
   }
-  100% {
+  90%, 100% {
+    transform: scale(1);
+
     opacity: 1;
-    transform: scale(1), rotate(45deg);
 
     top: 50px;
     left: 70px;
@@ -99,20 +114,27 @@
 }
 
 /* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
+@-webkit-keyframes circle-fadein {
   0% {
     opacity: 0;
-    transform: scale(2), rotate(45deg);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(0.6);
+  }
+  0%, 60% {
+    transform: scale(1.1);
 
-    top: 0;
-    left: 0;
+    top: -2px;
+    left: -2px;
 
     width: 100px;
     height: 100px;
   }
-  100% {
+  90%, 100% {
+    transform: scale(1);
+
     opacity: 1;
-    transform: scale(1), rotate(45deg);
 
     top: 50px;
     left: 70px;
@@ -123,20 +145,27 @@
 }
 
 /* Internet Explorer */
-@-ms-keyframes fadein {
+@-ms-keyframes circle-fadein {
   0% {
     opacity: 0;
-    transform: scale(2), rotate(45deg);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(0.6);
+  }
+  0%, 60% {
+    transform: scale(1.1);
 
-    top: 0;
-    left: 0;
+    top: -2px;
+    left: -2px;
 
     width: 100px;
     height: 100px;
   }
-  100% {
+  90%, 100% {
+    transform: scale(1);
+
     opacity: 1;
-    transform: scale(1), rotate(45deg);
 
     top: 50px;
     left: 70px;
@@ -147,25 +176,99 @@
 }
 
 /* Opera < 12.1 */
-@-o-keyframes fadein {
+@-o-keyframes circle-fadein {
   0% {
     opacity: 0;
-    transform: scale(2), rotate(45deg);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(0.6);
+  }
+  0%, 60% {
+    transform: scale(1.1);
 
-    top: 0;
-    left: 0;
+    top: -2px;
+    left: -2px;
 
     width: 100px;
     height: 100px;
   }
-  100% {
+  90%, 100% {
+    transform: scale(1);
+
     opacity: 1;
-    transform: scale(1), rotate(45deg);
 
     top: 50px;
     left: 70px;
 
     width: 50px;
     height: 50px;
+  }
+}
+
+.ok-animation {
+  -webkit-animation: ok-fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: ok-fadein 1s; /* Firefox < 16 */
+      -ms-animation: ok-fadein 1s; /* Internet Explorer */
+       -o-animation: ok-fadein 1s; /* Opera < 12.1 */
+          animation: ok-fadein 1s;
+}
+
+@keyframes ok-fadein {
+  0%, 60% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes ok-fadein {
+  0%, 60% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes ok-fadein {
+  0%, 60% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes ok-fadein {
+  0%, 60% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes ok-fadein {
+  0%, 60% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg);
   }
 }
