@@ -3,6 +3,8 @@
 import { Meteor } from 'meteor/meteor';
 import React, {Component} from 'react';
 
+import Checkmark from './Checkmark';
+
 import { mouthClassNameMap } from '../../libs/constants';
 
 const getMouthClassNames = (mood, colored) => {
@@ -17,24 +19,13 @@ const getEmojiClassNames = colored => {
 }
 
 export default class Emoji extends Component {
-    renderCheck() {
-      if (this.props.selected) {
-        return (
-          <span className="checkmark">
-            <div className="checkmark_circle"></div>
-            <div className="checkmark_stem"></div>
-            <div className="checkmark_kick"></div>
-          </span>
-        );
-      }
-    }
     render() {
       let emojisClassNames = getEmojiClassNames(this.props.colored).join(' ');
       let mouthClassNames = getMouthClassNames(this.props.mood, this.props.colored).join(' ');
       return (
         <div className={ emojisClassNames } onClick={ this.props.onRate }>
           <div className={ mouthClassNames } ></div>
-          { this.renderCheck() }
+          { this.props.selected ? <Checkmark active={ this.props.selected } /> : null }
         </div>
       );
     }
