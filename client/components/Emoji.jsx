@@ -14,8 +14,8 @@ const getMouthClassNames = (mood, colored) => {
 
 const getEmojiClassNames = colored => {
   return !!colored
-    ? [ 'emoji', 'emoji-colored' ]
-    : [ 'emoji', 'emoji-inactive' ];
+    ? [ 'emoji', 'zoom', 'emoji-colored' ]
+    : [ 'emoji', 'zoom', 'emoji-inactive' ];
 }
 
 export default class Emoji extends Component {
