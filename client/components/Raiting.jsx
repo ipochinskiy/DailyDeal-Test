@@ -1,5 +1,3 @@
-'use strict';
-
 import { Meteor } from 'meteor/meteor';
 import { Tracker } from 'meteor/tracker';
 import React, { Component } from 'react';

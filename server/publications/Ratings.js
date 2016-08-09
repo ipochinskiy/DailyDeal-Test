@@ -1,3 +1,5 @@
+'use strict';
+
 import { Meteor } from 'meteor/meteor';
 
 import { Ratings } from '../../libs/collections/Ratings';
