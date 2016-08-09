@@ -13,9 +13,9 @@ export default class EmojisBar extends Component {
           let currentMark = emojiMarkMap[type];
           let colored = Math.floor(this.props.rating) >= emojiMarkMap[type];
           let selected = this.props.myMark === currentMark;
-          let onRateHandle = selected
+          let onEmojiClicked = selected
             ? () => {}
-            : this.props.makeOnRate(currentMark);
+            : this.props.makeRateHandler(currentMark);
 
           return (
             <Emoji
@@ -24,7 +24,7 @@ export default class EmojisBar extends Component {
               colored={ colored }
               mark={ currentMark }
               selected={ selected }
-              onRate={ onRateHandle }
+              onRate={ onEmojiClicked }
             />
           );
         }) }

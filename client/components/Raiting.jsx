@@ -16,13 +16,6 @@ const getAverageRating = () => {
   return sum / items.length;
 }
 
-const makeOnRate = container => mark => () => Meteor.call('rate', { mark }, function(err, res) {
-  if (res) {
-    let average = getAverageRating();
-    container.setState({ myMark: mark, rating: average });
-  }
-}.bind(container));
-
 export default class Raiting extends Component {
   constructor(props) {
     super(props);
@@ -42,6 +35,15 @@ export default class Raiting extends Component {
   componenWillUnmount() {
     Meteor.unsubscribe('rating');
   }
+
+  makeRateHandler(mark) {
+    return () => Meteor.call('rate', { mark }, (err, res) => {
+      if (res) {
+        let average = getAverageRating();
+        this.setState({ myMark: mark, rating: average });
+      }
+    });
+  }
   
   render() {
     return (
@@ -52,7 +54,7 @@ export default class Raiting extends Component {
           <EmojisBar
             myMark={ this.state.myMark }
             rating={ this.state.rating }
-            makeOnRate={ makeOnRate(this) }
+            makeRateHandler={ this.makeRateHandler.bind(this) }
           />
         </Sheet>
       </div>
